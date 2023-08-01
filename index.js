@@ -48,6 +48,22 @@ function sumarPokemon(){
     document.querySelector('span').innerText =  contador+1;
 }
 
+
+function moverPokemon(){
+    let pokemon = document.querySelectorAll("button");
+    pokemon.forEach(element => {
+        element.style.position = 'absolute';
+        element.style.top = '100px';
+        element.style.left = '200px';
+
+        } 
+          )
+};
+
 abrirPokebola();
+moverPokemon()
 
-
+Pokemon.setDatos("pikachu",3);
+Pokemon.saludar();
+Pokemon.getEdad();
+Pokemon.getNombre();
