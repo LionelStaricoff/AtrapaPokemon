@@ -33,15 +33,18 @@ div{
     height: 50px;
     z-index: 1;
     pointer-events: none;
-    transition: all.15s;
+    transition: all .15s;
     border-radius: 50%;
-    background-color: aliceblue;
+    background-color: rgb(240, 248, 255,1%);
 
 }
+
 
 .tracker img{
     width: 110%;
     height: 110%;
+    object-fit: contain;
+    
 
 }
 
@@ -53,4 +56,5 @@ button{
 button img{
     width: 5em;
     height: 5em;
+    object-fit: contain;
 }
