@@ -8,12 +8,17 @@ let despaparecer = true;
  });
 
 
-
+//comando para mouse
 document.body.addEventListener('mousemove', e => {
     tracker.style.left = `${e.clientX}px`;
     tracker.style.top = `${e.clientY}px`;
 })
 
+//comando para celular
+document.body.addEventListener('touchmove', e => {
+    tracker.style.left = `${e.clientX}px`;
+    tracker.style.top = `${e.clientY}px`;
+})
 
 
 //contador de pokemon
@@ -41,6 +46,7 @@ function agregarPokemon() {
     btnPokemon.style.left = posicionAleatoriaX()+'px';
   
 
+    //comando para mouse
     btnPokemon.addEventListener('click', e => {
         puntero.src = "img/pokeballOpen.png";
         tracker.style.height = "150px";
@@ -50,10 +56,30 @@ function agregarPokemon() {
         sumarPokemonCapturados();
 
     });
+//comando para celular
+    btnPokemon.addEventListener('touchstart', e => {
+        puntero.src = "img/pokeballOpen.png";
+        tracker.style.height = "150px";
+        tracker.style.width = "150px";
+        despaparecer = true;
 
+        sumarPokemonCapturados();
 
+    });
 
+//comando para mouse
     btnPokemon.addEventListener('mouseout', e => {
+        puntero.src = "img/pokeball.png";
+        tracker.style.height = "50px";
+        tracker.style.width = "50px";
+        if (despaparecer) {
+            btnPokemon.style.display = "none"
+            despaparecer = false;
+        }
+    });
+
+    //comando para celular
+    btnPokemon.addEventListener('touchmove', e => {
         puntero.src = "img/pokeball.png";
         tracker.style.height = "50px";
         tracker.style.width = "50px";
