@@ -2,6 +2,12 @@ let tracker = document.querySelector('.tracker');
 let puntero = document.querySelector('#pokebola');
 let despaparecer = true;
 
+// boton para recargar la pagina
+ document.querySelector('input').addEventListener("click", function(){
+    location.reload();
+ });
+
+
 
 document.body.addEventListener('mousemove', e => {
     tracker.style.left = `${e.clientX}px`;
@@ -16,17 +22,7 @@ function sumarPokemonCapturados() {
     document.querySelector('span').innerText = contador + 1;
 }
 
-//colocar los pokemon en el eje x de la pantalla
-function moverPokemon() {
-    let pokemon = document.querySelectorAll("button");
-    pokemon.forEach(element => {
-        element.style.position = 'relative';
-        element.style.top = '100px';
-        element.style.left = '200px';
 
-    }
-    )
-};
 
 
 //agrega pokemon en la pantalla
@@ -41,8 +37,9 @@ function agregarPokemon() {
     //creando btn
     const btnPokemon = document.createElement('button');
     btnPokemon.style.position = 'relative';
-    btnPokemon.style.top = '100px';
-    btnPokemon.style.left = '200px';
+    btnPokemon.style.top = posicionAleatoriaX()+'px';
+    btnPokemon.style.left = posicionAleatoriaX()+'px';
+  
 
     btnPokemon.addEventListener('click', e => {
         puntero.src = "img/pokeballOpen.png";
@@ -71,31 +68,27 @@ function agregarPokemon() {
 
 }
 
-
-
-
-
-// agrega los pokemon cada 2 segundos
-function agregarPOkemonPorTiempo() {
-    let i = 0;
-    const agregarPokes = setTimeout("agregarPokemon()", 1000);
-    if (i >= 10) {
-        clearTimeout(agregarPokes);
-    }
-    i++;
+function posicionAleatoriaX(){
+    let numero = Math.round(Math.random()*400);
+    return numero;
 }
 
 
+// agrega los pokemon cada 2 segundos
 
-//agregarPOkemonPorTiempo();
-agregarPokemon()
-agregarPokemon()
-agregarPokemon()
+    let i = 0;
+    const agregarPokes = setInterval(()=>{
+        agregarPokemon();
+        i++;
+
+        if(i===10){
+            clearInterval(agregarPokes);
+        }
+    },2000);
+    
 
 
-/*
-Pokemon.setDatos();
-Pokemon.getEjeX();
-Pokemon.getImg();
-alert(Pokemon.imagen +" "+  Pokemon.posicionX)
-*/
+
+
+
+

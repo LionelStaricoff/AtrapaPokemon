@@ -1,11 +1,13 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Julee&family=Press+Start+2P&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: all 1s;
-   
+    font-family: 'Julee', cursive;
+
+    font-family: 'Press Start 2P', cursive;
 }
 
 
@@ -18,12 +20,23 @@ footer{
     place-items: center;
 }
 
+input{
+    background: none;
+    font-size: 1.2em;
+    border:none;
+}
 
+input:hover{
+    font-size: 1em;
+    color: red;
+}
 
 div{
     height: 90vw;
     width: 100%;
-    background-color: brown
+    background-color: brown;
+    overflow: hidden;
+  
 }
 
 .tracker{
@@ -52,6 +65,7 @@ div{
 button{
     width: 5em;
     height: 5em;
+
 }
 button img{
     width: 5em;

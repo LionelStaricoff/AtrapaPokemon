@@ -64,3 +64,19 @@ function cerrarpokebola() {
 
     });
 }
+
+
+
+
+
+//colocar los pokemon en el eje x de la pantalla
+function moverPokemon() {
+    let pokemon = document.querySelectorAll("button");
+    pokemon.forEach(element => {
+        element.style.position = 'relative';
+        element.style.top = '100px';
+        element.style.left = '200px';
+
+    }
+    )
+};
