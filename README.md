@@ -1,6 +1,6 @@
 # AtrapaPokemon
 
-<p>Diviertete con este increible juego para atrapar a tus pokeon favoritos</p>
+<p>Diviértete con este increíble juego para atrapar a tus pokemon favoritos </p>
 
 
 
