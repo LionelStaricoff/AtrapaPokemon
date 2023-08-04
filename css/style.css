@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 1s;
+    transition: all .3s;
     font-family: 'Julee', cursive;
 
     font-family: 'Press Start 2P', cursive;
@@ -34,10 +34,13 @@ input:hover{
 div{
     height: 90vw;
     width: 100%;
-    background-color: brown;
+    background: url("/img/fondo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
   
 }
+
 
 .tracker{
     position: fixed;
@@ -65,10 +68,12 @@ div{
 button{
     width: 5em;
     height: 5em;
+    background: none;
+    border:none;
 
 }
 button img{
-    width: 5em;
-    height: 5em;
+    width: 300%;
+    height: 300%;
     object-fit: contain;
 }
