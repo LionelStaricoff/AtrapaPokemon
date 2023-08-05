@@ -3,9 +3,7 @@ let puntero = document.querySelector('#pokebola');
 let despaparecer = true;
 
 // boton para recargar la pagina
- document.querySelector('input').addEventListener("click", function(){
-    location.reload();
- });
+ document.querySelector('input').addEventListener("click", utilPokemon.recargarPagina);
 
 
 //evento del raton
@@ -37,13 +35,13 @@ function agregarPokemon() {
 
     //creando img
     const imgPokemon = document.createElement('img');
-    imgPokemon.src = "img/poke"+numeroRandom(10)+".png";
+    imgPokemon.src = "img/poke"+utilPokemon.aleatorea(10)+".png";
 
     //creando btn
     const btnPokemon = document.createElement('button');
     btnPokemon.style.position = 'relative';
-    btnPokemon.style.top = numeroRandom(400)+'px';
-    btnPokemon.style.left = numeroRandom(400)+'px';
+    btnPokemon.style.top = utilPokemon.aleatorea(400)+'px';
+    btnPokemon.style.left = utilPokemon.aleatorea(400)+'px';
   
 
     btnPokemon.addEventListener('click', e => {
@@ -52,7 +50,7 @@ function agregarPokemon() {
         tracker.style.width = "150px";
         despaparecer = true;
 
-        sumarPokemonCapturados();
+      
 
     });
 
@@ -65,6 +63,7 @@ function agregarPokemon() {
         if (despaparecer) {
             btnPokemon.style.display = "none"
             despaparecer = false;
+            sumarPokemonCapturados();
         }
     });
 
@@ -73,10 +72,7 @@ function agregarPokemon() {
 
 }
 
-function numeroRandom(entrada){
-    let numero = Math.round(Math.random()*entrada);
-    return numero;
-}
+
 
 
 // agrega los pokemon cada 2 segundos
